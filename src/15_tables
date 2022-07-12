@@ -1,0 +1,183 @@
+CREATE TABLE Country(
+   id SERIAL PRIMARY KEY,
+   name VARCHAR,
+   president VARCHAR,
+   area DOUBLE PRECISION,
+   languages VARCHAR
+);
+INSERT INTO Country (name, president, area, languages)
+VALUES
+    ('USA', 'Joe Biden', '3.796', 'American English'),
+    ('China', 'Xi Jinping', '9.597', 'Standard Chinese'),
+    ('Kyrgyzsta', 'Sadyr Zhaparov', '0.199', 'Kyrgyz'),
+    ('Russian Federation', 'Vladimir Putin', '17.1', 'Russian');
+
+CREATE TABLE Bolnoilor(
+    id SERIAL PRIMARY KEY,
+    fio VARCHAR(50) UNIQUE,
+    diagnoz VARCHAR(50) UNIQUE,
+    operation VARCHAR(50),
+    palata INT
+);
+INSERT INTO bolnoilor (fio, diagnoz, operation, palata)
+VALUES ('Asanov', 'Gastrit', 'Resection', 301),
+       ('Usonov', 'Ezofagit', 'not need', 303),
+       ('Almazov', 'Pancreatit', 'konservativnyi', 303),
+       ('Abyshov', 'Cancer ventriculli', 'gastroectomy', 301);
+
+CREATE TABLE students (
+                          id SERIAL PRIMARY KEY,
+                          name VARCHAR(50) NOT NULL,
+                          email VARCHAR(50),
+                          age INT
+);
+INSERT INTO students (name, email, age)
+VALUES ('Dastan', 'd@gmail.com', 20),
+       ('Datka', 'da@gmail.com', 20),
+       ('Mavlian', 'm@gmail.com', 20),
+       ('Janyl', 'j@gmail.com', 20);
+
+CREATE TABLE Prisoner (
+         id SERIAL PRIMARY KEY,
+         first_name VARCHAR(50),
+         last_name VARCHAR(50),
+         statia INT,
+         sudimost INT,
+         kamera VARCHAR(50)
+);
+
+INSERT INTO Prisoner ( first_name, last_name, statia, sudimost, kamera)
+values ( 'Holdlamis', 'Alphazap', 58, 2018, '7'),
+       ('Alpha', 'Bitchip', 61, 2017, '3213'),
+       ('Veribet', 'Home Ing', 100, 2020, '5501'),
+       ('Tresom', 'Wrapsafe', 44, 2016, '7632'),
+       ('Y-find', 'Opela', 70, 2018, '03');
+
+CREATE TABLE Cars (
+                      id SERIAL PRIMARY KEY,
+                      model VARCHAR(50),
+                      color VARCHAR(50),
+                      price VARCHAR(50),
+                      product_date INT
+);
+INSERT INTO Cars (model, color, price, product_date)
+VALUES ('Lincoln', 'Indigo', '$12839.57', 2010),
+       ('Lexus', 'Green', '$24812.73', 1994),
+       ('Buick', 'Aquamarine', '$11376.07', 1991),
+       ('Dodge', 'Crimson', '$13120.65', 2011);
+
+CREATE TABLE Drugs (
+                       id SERIAL PRIMARY KEY,
+                       drug_brand_name VARCHAR(50),
+                       drug_name_gen VARCHAR(50),
+                       company_name VARCHAR(50),
+                       price VARCHAR(50)
+);
+INSERT INTO Drugs (drug_brand_name, drug_name_gen, company_name, price)
+VALUES ('New Lip Protector Sunscreen SPF15', 'Octinoxate,Avobenzone,Octocrylene', 'Mary Kay INC.', '$4.90'),
+('family wellness laxative', 'Polyethylene Glycol 3350', 'Family Dollar Services Inc', '$12.33'),
+('Hydralazine Hydrochloride', 'Hydralazine Hydrochloride', 'Cardinal Health', '$3.95'),
+('Aurum 5', 'Aurum 5', 'Uriel Pharmacy Inc.', '$7.26'),
+('English Plantain', 'English Plantain', 'Antigen Laboratories, Inc.', '$4.39');
+
+CREATE TABLE Doctors (
+                         id SERIAL PRIMARY KEY,
+                         first_name VARCHAR(50),
+                         last_name VARCHAR(50),
+                         email VARCHAR(50),
+                         gender VARCHAR(50),
+                         room INT
+);
+INSERT INTO Doctors (first_name, last_name, email, gender, room)
+VALUES ('Vénus', 'Crose', 'ncrose0@csmonitor.com', 'Female', 12),
+('Rachèle', 'Spread', 'rspread1@narod.ru', 'Genderfluid', 5),
+('Irène', 'Tomik', 'mtomik2@tinypic.com', 'Male', 7),
+('Dù', 'Petras', 'hpetras3@tripod.com', 'Male', 1),
+('Maëlann', 'Youles', 'tyoules4@youtu.be', 'Male', 3);
+
+CREATE TABLE Sportlers (
+                           id SERIAL PRIMARY KEY,
+                           first_name VARCHAR(50),
+                           last_name VARCHAR(50),
+                           country VARCHAR(50),
+                           gender VARCHAR(50),
+                           sport_type VARCHAR(50)
+);
+INSERT INTO Sportlers (first_name, last_name, country, gender, sport_type)
+VALUES ('Gösta', 'Dowsett', 'United States', 'Female', 'Football'),
+('Loïc', 'Dummer', 'Colombia', 'Non-binary', 'Volleyball'),
+('Géraldine', 'Scamerdine', 'China', 'Male', 'Tennis'),
+('Chloé', 'Allnutt', 'Guatemala', 'Male', 'Ice hockey');
+
+CREATE TABLE Person (
+                        id SERIAL PRIMARY KEY,
+                        first_name VARCHAR(50),
+                        last_name VARCHAR(50),
+                        country VARCHAR(50),
+                        gender VARCHAR(50),
+                        birthday DATE
+);
+INSERT INTO Person (first_name, last_name, country, gender, birthday)
+VALUES ('Geneviève', 'Cary', 'Ukraine', 'Male', '20/8/1974'),
+('Pò', 'Lafay', 'Saudi Arabia', 'Male', '13/6/1987'),
+('Anaïs', 'Hagart', 'Russia', 'Female', '28/2/1980'),
+('Lóng', 'Dupoy', 'Indonesia', 'Genderfluid', '14/1/1981');
+
+CREATE TABLE products2(
+                          id SERIAL PRIMARY KEY,
+                          product_name VARCHAR(50) NOT NULL,
+                          manufacturer VARCHAR(50) NOT NULL,
+                          product_count INTEGER DEFAULT 0,
+                          price NUMERIC
+);
+
+INSERT INTO products2 (product_name, manufacturer, product_count, price)
+VALUES ('iPhone X', 'Apple', 2, 71000),
+       ('iPhone 8', 'Apple', 3, 56000),
+       ('Galaxy S9', 'Samsung', 6, 56000),
+       ('Galaxy S8 plus', 'Samsung', 2, 46000),
+       ('Desire', 'HTC', 3, 26000);
+
+CREATE TABLE Applications (
+                              id SERIAL PRIMARY KEY,
+                              app_name VARCHAR(50),
+                              app_version VARCHAR(50),
+                              app_bundle VARCHAR(50),
+                              company VARCHAR(50),
+                              ndc_code VARCHAR(50)
+);
+INSERT INTO Applications (app_name, app_version, app_bundle, company, ndc_code)
+VALUES ('Ventosanzap', '0.1.4', 'com.netlog.Bigtax', 'Browseblab', '10356-845'),
+('Stringtough', '0.3.3', 'com.fc2.Quo Lux', 'Vinte', '66689-201'),
+('Toughjoyfax', '4.7.3', 'com.posterous.Y-Solowarm', 'Latz', '49349-677'),
+('Zamit', '2.3', 'com.cloudflare.Zamit', 'Gigabox', '49963-813');
+
+CREATE TABLE Employees (
+                           id SERIAL PRIMARY KEY,
+                           first_name VARCHAR(50) NOT NULL,
+                           last_name VARCHAR(50) NOT NULL,
+                           job_title VARCHAR(50)UNIQUE,
+                           country VARCHAR(50),
+                           email VARCHAR(50),
+                           gender VARCHAR(50),
+                           age INT
+);
+INSERT INTO Employees (first_name, last_name, job_title, country, email, gender, age)
+VALUES ('Gaylord', 'Brothwell', 'Budget/Accounting Analyst IV', 'Iran', 'gbrothwell0@cnn.com', 'Male', 51),
+('Homere', 'Foucher', 'Data Coordiator', 'Portugal', 'hfoucher1@cbslocal.com', 'Male', 49),
+('Ulrica', 'Varsey', 'Assistant Media Planner', 'Indonesia', 'uvarsey2@statcounter.com', 'Female', 57),
+('Wayne', 'Humpage', 'Nurse Practicioner', 'Indonesia', 'whumpage3@smh.com.au', 'Male', 47);
+
+CREATE TABLE Doljniki (
+                          id SERIAL PRIMARY KEY,
+                          full_name VARCHAR(50) NOT NULL,
+                          cred_card VARCHAR(50),
+                          card_num VARCHAR(50) UNIQUE,
+                          currency VARCHAR(50),
+                          Summ VARCHAR(50)
+);
+INSERT INTO Doljniki (full_name, cred_card, card_num, currency, Summ)
+VALUES ('Ronny Millsom', 'china-unionpay', '56022515525589167', 'USD', '$11740.75'),
+('Rocky Feltoe', 'visa-electron', '4508702233701119', 'USD', '$20031.93'),
+('Maryann Goodall', 'maestro', '50383924440627639', 'USD', '$22892.96'),
+('Cristen Linkleter', 'jcb', '3584500829462024', 'USD', '$26694.02');
